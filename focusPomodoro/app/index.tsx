@@ -1,11 +1,54 @@
+import { useState } from "react";
 import { Image, Pressable, StyleSheet, Text, View } from "react-native";
 
+const pomodoroType = [
+  {
+    id: "pomodoro",
+    image: require("./default.png"),
+    timerValue: 25,
+    timerText: "Foco",
+  },
+  {
+    id: "short",
+    image: require("./short.png"),
+    timerValue: 5,
+    timerText: "Pausa curta",
+  },
+  {
+    id: "long",
+    image: require("./long.png"),
+    timerValue: 15,
+    timerText: "Pausa longa",
+  },
+];
+
 export default function Index() {
+  const [timerType, setTimerType] = useState(pomodoroType[0]);
+
   return (
     <View style={styles.container}>
-      <Image source={require("./default.png")} />
+      <Image source={timerType.image} />
       <View style={styles.actions}>
-        <Text style={styles.timer}>25:00</Text>
+        <View style={styles.context}>
+          {pomodoroType.map((timer, index) => (
+            <Pressable
+              key={index}
+              onPress={() => setTimerType(timer)}
+              style={
+                timerType.id === pomodoroType[index].id &&
+                styles.contextButtonTextActive
+              }
+            >
+              <Text style={styles.contextButtonText}>{timer.timerText}</Text>
+            </Pressable>
+          ))}
+        </View>
+        <Text style={styles.timer}>
+          {new Date(timerType.timerValue * 1000).toLocaleTimeString("pt-Br", {
+            minute: "2-digit",
+            second: "2-digit",
+          })}
+        </Text>
         <View>
           <Pressable style={styles.button}>
             <Text style={styles.buttonText}>Começar</Text>
@@ -38,6 +81,20 @@ const styles = StyleSheet.create({
     borderRadius: 32,
     gap: 32,
   },
+  context: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    alignItems: "center",
+  },
+  contextButtonTextActive: {
+    backgroundColor: "#144480",
+    borderRadius: 8,
+  },
+  contextButtonText: {
+    color: "#fff",
+    fontSize: 12.5,
+    padding: 8,
+  },
   timer: {
     color: "#fff",
     fontSize: 54,
@@ -57,7 +114,7 @@ const styles = StyleSheet.create({
   },
   footer: {
     width: "80%",
-    alignItems: 'center'
+    alignItems: "center",
   },
   footerText: {
     color: "#98A0A8",
