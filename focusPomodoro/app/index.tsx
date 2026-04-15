@@ -1,5 +1,6 @@
 import { ActionButton } from "@/components/ActionButton";
 import { FocusButton } from "@/components/FocusButton";
+import { IconPause, IconPlay } from "@/components/Icons";
 import { Timer } from "@/components/Timer";
 import { useRef, useState } from "react";
 import { Image, StyleSheet, Text, View } from "react-native";
@@ -82,6 +83,7 @@ export default function Index() {
           <FocusButton
             onPress={toggleTimer}
             textButton={timerRunning ? "Pausar" : "Começar"}
+            
           />
         </View>
       </View>
