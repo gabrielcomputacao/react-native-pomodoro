@@ -83,7 +83,7 @@ export default function Index() {
           <FocusButton
             onPress={toggleTimer}
             textButton={timerRunning ? "Pausar" : "Começar"}
-            
+            icon={timerRunning ? <IconPause /> : <IconPlay />}
           />
         </View>
       </View>
