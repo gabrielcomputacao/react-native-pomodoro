@@ -1,1 +1,12 @@
+
+Version 1
+
 https://www.figma.com/design/PFWMP6RyyUGlqFcF5uYl0R/React-Native--desenvolvendo-com-Expo-%7C-Fokus--Community-?node-id=1734-448&t=Cnxy4J5NO8aSiu5t-0
+
+Version 2
+
+https://www.figma.com/design/RercEdmBiOhb0D8LztyIiD/React-Native--navegando-entre-telas-%7C-Fokus--Community-?node-id=1734-451&t=STItOPdl4hkiGcc6-0
+
+
+
+
