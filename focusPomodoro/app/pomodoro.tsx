@@ -8,19 +8,19 @@ import { Image, StyleSheet, Text, View } from "react-native";
 const pomodoroType = [
   {
     id: "pomodoro",
-    image: require("./default.png"),
+    image: require("../assets/images/pomodoro/default.png"),
     timerValue: 25 * 60,
     timerText: "Foco",
   },
   {
     id: "short",
-    image: require("./short.png"),
+    image: require("../assets/images/pomodoro/short.png"),
     timerValue: 5 * 60,
     timerText: "Pausa curta",
   },
   {
     id: "long",
-    image: require("./long.png"),
+    image: require("../assets/images/pomodoro/long.png"),
     timerValue: 15 * 60,
     timerText: "Pausa longa",
   },
