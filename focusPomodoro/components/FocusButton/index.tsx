@@ -1,5 +1,5 @@
 import { Pressable, StyleSheet, Text } from "react-native";
-import { IconPause, IconPlay } from "../Icons";
+
 
 export const FocusButton = ({
   textButton,
@@ -8,7 +8,7 @@ export const FocusButton = ({
 }: {
   textButton: string;
   onPress: () => void;
-  icon: any;
+  icon?: any;
 }) => {
   return (
     <Pressable onPress={onPress} style={styles.button}>
@@ -27,6 +27,8 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     gap: 12,
+    textAlign: 'center',
+    
   },
   buttonText: {
     fontSize: 18,

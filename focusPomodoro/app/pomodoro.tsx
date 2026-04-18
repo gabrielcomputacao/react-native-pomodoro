@@ -1,5 +1,6 @@
 import { ActionButton } from "@/components/ActionButton";
 import { FocusButton } from "@/components/FocusButton";
+import { Footer } from "@/components/Footer";
 import { IconPause, IconPlay } from "@/components/Icons";
 import { Timer } from "@/components/Timer";
 import { useRef, useState } from "react";
@@ -87,10 +88,7 @@ export default function Pomodoro() {
           />
         </View>
       </View>
-      <View style={styles.footer}>
-        <Text style={styles.footerText}>Desenvolvido por</Text>
-        <Text style={styles.footerText}>Gabriel Henrique</Text>
-      </View>
+     <Footer firstText="Desenvolvido por" secondText="Gabriel Henrique" />
     </View>
   );
 }
