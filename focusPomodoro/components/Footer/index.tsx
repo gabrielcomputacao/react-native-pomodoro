@@ -11,7 +11,7 @@ export const Footer = ({firstText, secondText}: {firstText: string, secondText: 
 
 const styles = StyleSheet.create({
   footer: {
-    width: "80%",
+    width: "100%",
     alignItems: "center",
   },
   footerText: {

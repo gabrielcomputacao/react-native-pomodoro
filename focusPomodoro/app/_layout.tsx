@@ -1,10 +1,5 @@
-import { Stack } from "expo-router";
+import { Drawer } from "expo-router/drawer";
 
-export default function Layout(){
-    return (
-        <Stack initialRouteName="index">
-            <Stack.Screen name="index" options={{ headerShown: false}} />
-            <Stack.Screen name="pomodoro" options={{ headerShown: false}} />
-        </Stack>
-    )
+export default function Layout() {
+  return <Drawer></Drawer>;
 }
