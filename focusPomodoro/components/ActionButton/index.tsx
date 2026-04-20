@@ -11,7 +11,6 @@ export const ActionButton = ({
 }) => {
   return (
     <Pressable
-
       onPress={onPress}
       style={active && styles.contextButtonTextActive}
     >

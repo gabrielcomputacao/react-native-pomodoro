@@ -1,9 +1,26 @@
-import { Text, View } from "react-native"
+import ItemTask from "@/components/ItemTask";
+import { StyleSheet, Text, View } from "react-native";
 
-export default function Task (){
-    return (
-        <View>
-            <Text>testando</Text>
-        </View>
-    )
+export default function Task() {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.text}>Lista de tarefas:</Text>
+      <ItemTask text="testando" completed={false} />
+      <ItemTask text="testando" completed={true} />
+    </View>
+  );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: "#021123",
+    flex: 1,
+    alignItems: "center",
+    gap: 16,
+  },
+  text: {
+    color: "#fff",
+    fontSize: 25,
+    textAlign: "center",
+  },
+});
