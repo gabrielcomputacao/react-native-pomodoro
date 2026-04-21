@@ -1,4 +1,4 @@
-import { Pressable, StyleSheet, View } from "react-native";
+import { Pressable, StyleSheet, Text, View } from "react-native";
 import { IconCheck, IconDelete, IconEdit } from "../Icons";
 
 export default function ItemTask({
@@ -10,12 +10,19 @@ export default function ItemTask({
 }: {
   text: string;
   completed: boolean;
-  onPressComplete: () => void;
-  onPressEdit: () => void;
-  onPressDelete: () => void;
+  onPressComplete?: () => void;
+  onPressEdit?: () => void;
+  onPressDelete?: () => void;
 }) {
+
+  const cardContainer: any = [styles.container]
+  if (completed) {
+      cardContainer.push(styles.cardCompleted)
+  }
+
+
   return (
-    <View style={styles.container}>
+    <View style={cardContainer}>
       <View style={styles.cardItem}>
         <Pressable
           onPress={onPressComplete}
@@ -27,7 +34,7 @@ export default function ItemTask({
         >
           <IconCheck />
         </Pressable>
-        {text}
+        <Text style={styles.textTask}>{text}</Text>
       </View>
       <View style={styles.cardItem}>
         <Pressable onPress={onPressEdit} style={styles.edit}>
@@ -53,8 +60,6 @@ const styles = StyleSheet.create({
   },
   edit: {
     borderColor: "#222",
-    borderRadius: "50%",
-    borderWidth: 1,
     padding: 6,
   },
   check: {
@@ -63,6 +68,9 @@ const styles = StyleSheet.create({
   },
   checkCompleted: {
     backgroundColor: "#00F4BF",
+  },
+  cardCompleted: {
+    backgroundColor: "#0f9175",
   },
   checkDefault: {
     backgroundColor: "#fff",
@@ -74,4 +82,9 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: "bold",
   },
+  textTask: {
+    color: '#222',
+    fontWeight: 'bold',
+    fontSize: 16
+  }
 });

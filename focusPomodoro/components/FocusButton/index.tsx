@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     gap: 12,
     textAlign: 'center',
-    
+    width: '100%'
   },
   buttonText: {
     fontSize: 18,

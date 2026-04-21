@@ -1,3 +1,4 @@
+import { FocusButton } from "@/components/FocusButton";
 import ItemTask from "@/components/ItemTask";
 import { StyleSheet, Text, View } from "react-native";
 
@@ -7,6 +8,9 @@ export default function Task() {
       <Text style={styles.text}>Lista de tarefas:</Text>
       <ItemTask text="testando" completed={false} />
       <ItemTask text="testando" completed={true} />
+      <View style={{ width: "80%" }}>
+        <FocusButton textButton="Adicionar nova tarefa" onPress={() => {}} />
+      </View>
     </View>
   );
 }
